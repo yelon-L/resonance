@@ -56,6 +56,14 @@
 		const ripples: any[] = [];
 		const mouse = { x: 0, y: 0, active: false, radius: 220 };
 
+		// 匿名他者系统 (The Unseen Others)
+		// 它们代表在集体潜意识中游荡的其他意识实体
+		const unseenOthers = [
+			{ x: width * 0.2, y: height * 0.3, vx: 0.25, vy: -0.15, radius: 6, color: '#f472b6', glow: 1.0, label: '他者意识·A', pulsePhase: 0 },
+			{ x: width * 0.8, y: height * 0.4, vx: -0.18, vy: 0.22, radius: 6, color: '#34d399', glow: 1.0, label: '他者意识·B', pulsePhase: Math.PI * 0.6 },
+			{ x: width * 0.5, y: height * 0.75, vx: 0.15, vy: -0.25, radius: 6, color: '#fb7185', glow: 1.0, label: '他者意识·C', pulsePhase: Math.PI * 1.2 }
+		];
+
 		// 用于在插值时存储每个粒子的源位置和目标位置
 		let transitionProgress = { value: 0 };
 		let prevMode: Mode = 'free';
@@ -67,13 +75,13 @@
 			particles.push({
 				x: Math.random() * width,
 				y: Math.random() * height,
-				vx: (Math.random() - 0.5) * 0.8,
-				vy: (Math.random() - 0.5) * 0.8,
-				radius: Math.random() * 2 + 1.5,
+				vx: (Math.random() - 0.5) * 0.6,
+				vy: (Math.random() - 0.5) * 0.6,
+				radius: Math.random() * 2 + 1.2,
 				glow: 0.1,
 				color: '#a5b4fc',
 				baseColor: '#a5b4fc',
-				pulseSpeed: 0.02 + Math.random() * 0.03,
+				pulseSpeed: 0.015 + Math.random() * 0.02,
 				pulsePhase: Math.random() * Math.PI * 2
 			});
 		}
@@ -106,12 +114,12 @@
 					const idx = Math.floor(i / 2);
 					tx = idx * segment + (Math.random() * 20 - 10);
 					const baseAngle = (tx / width) * Math.PI * 4;
-					const amp = Math.min(height * 0.2, 120);
+					const amp = Math.min(height * 0.18, 110);
 					const offset = isGroupA ? 0 : Math.PI;
 					ty = cy + Math.sin(baseAngle + offset) * amp + (Math.random() * 20 - 10);
 				} else if (mode === 'self') {
 					// 曼陀罗
-					const ringIndex = i % 3; // 3层同心圆
+					const ringIndex = i % 3; 
 					let r = 0;
 					let angle = 0;
 					if (ringIndex === 0) {
@@ -143,17 +151,12 @@
 			prevMode = lastMode;
 			lastMode = newMode;
 
-			// 记录当前位置作为起点
 			sourcePositions = particles.map(p => ({ x: p.x, y: p.y }));
-			// 计算目标位置
 			targetPositions = computeTargetPositions(newMode);
-
-			// 重置插值进度
 			transitionProgress.value = 0;
 
 			if (currentAnime) currentAnime.pause();
 
-			// 改变粒子的颜色
 			particles.forEach((p) => {
 				let targetColor = '#a5b4fc';
 				if (newMode === 'persona') targetColor = '#818cf8';
@@ -195,18 +198,21 @@
 			mouse.active = false;
 		});
 
-		// 鼠标点击 - 产生涟漪
+		// 鼠标点击 - 产生主涟漪
 		window.addEventListener('click', (e) => {
 			const target = e.target as HTMLElement;
 			if (target.closest('.archetype-card') || target.closest('a') || target.closest('button')) {
 				return;
 			}
 			ripples.push({
+				id: Math.random(),
 				x: e.clientX,
 				y: e.clientY,
 				currentRadius: 0,
-				maxRadius: Math.min(width, height) * 0.4,
-				speed: 5
+				maxRadius: Math.min(width, height) * 0.45,
+				speed: 4.5,
+				color: 'rgba(168, 85, 247, 0.25)',
+				isEcho: false
 			});
 		});
 
@@ -214,14 +220,51 @@
 		let frame = 0;
 		function animateLoop() {
 			frame++;
-			// 检查模式是否有改变
+			
 			if (activeMode !== lastMode) {
 				handleModeChange(activeMode);
 			}
 
 			ctx.clearRect(0, 0, width, height);
 
-			// 更新和渲染涟漪
+			// A. 更新匿名他者 (Unseen Others) 位置
+			unseenOthers.forEach(other => {
+				other.pulsePhase += 0.02;
+				other.x += other.vx;
+				other.y += other.vy;
+
+				// 边界反弹
+				if (other.x < 50 || other.x > width - 50) other.vx *= -1;
+				if (other.y < 50 || other.y > height - 50) other.vy *= -1;
+
+				// 绘制他者光场 (微弱光晕)
+				const glowRadius = 35 + Math.sin(other.pulsePhase) * 10;
+				const grad = ctx.createRadialGradient(other.x, other.y, 0, other.x, other.y, glowRadius);
+				grad.addColorStop(0, `${other.color}26`); // 15% opacity
+				grad.addColorStop(1, 'transparent');
+				
+				ctx.beginPath();
+				ctx.arc(other.x, other.y, glowRadius, 0, Math.PI * 2);
+				ctx.fillStyle = grad;
+				ctx.fill();
+
+				// 绘制核心光点
+				ctx.beginPath();
+				ctx.arc(other.x, other.y, other.radius, 0, Math.PI * 2);
+				ctx.fillStyle = other.color;
+				ctx.shadowBlur = 15;
+				ctx.shadowColor = other.color;
+				ctx.fill();
+				ctx.shadowBlur = 0;
+
+				// 绘制标签文字
+				ctx.font = '300 10px var(--font-sans)';
+				ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+				ctx.textAlign = 'center';
+				ctx.fillText(other.label, other.x, other.y - 15);
+			});
+
+			// B. 更新和渲染涟漪（包含多重干涉波 Echo Ripples）
 			for (let i = ripples.length - 1; i >= 0; i--) {
 				const r = ripples[i];
 				r.currentRadius += r.speed;
@@ -229,24 +272,56 @@
 				ctx.beginPath();
 				ctx.arc(r.x, r.y, r.currentRadius, 0, Math.PI * 2);
 				const alpha = 1 - r.currentRadius / r.maxRadius;
-				ctx.strokeStyle = `rgba(168, 85, 247, ${alpha * 0.25})`;
-				ctx.lineWidth = 2;
+				ctx.strokeStyle = r.color.replace('0.25', (alpha * 0.25).toString());
+				ctx.lineWidth = r.isEcho ? 1.2 : 2.0;
 				ctx.stroke();
+
+				// 如果是主涟漪，当它的波阵面扫过匿名他者时，触发对方的心灵感应被动回声涟漪 (Echo Ripple)
+				if (!r.isEcho && !r.hasTriggeredEcho) {
+					unseenOthers.forEach(other => {
+						const dx = other.x - r.x;
+						const dy = other.y - r.y;
+						const dist = Math.sqrt(dx * dx + dy * dy);
+						
+						// 当主涟漪刚好扩大到他者位置时
+						if (Math.abs(r.currentRadius - dist) < 5) {
+							// 触发 Echo Ripple
+							ripples.push({
+								id: Math.random(),
+								x: other.x,
+								y: other.y,
+								currentRadius: 0,
+								maxRadius: Math.min(width, height) * 0.25,
+								speed: 3.5,
+								color: 'rgba(6, 182, 212, 0.25)', // Cyan color for echoes
+								isEcho: true
+							});
+							
+							// 闪烁他者核心
+							other.glow = 2.5;
+						}
+					});
+					r.hasTriggeredEcho = true; // 仅触发一次
+				}
 
 				if (r.currentRadius >= r.maxRadius) {
 					ripples.splice(i, 1);
 				}
 			}
 
-			// 粒子位置更新
+			// C. 更新并绘制普通粒子
 			particles.forEach((p, idx) => {
 				p.pulsePhase += p.pulseSpeed;
 				const localGlow = Math.sin(p.pulsePhase) * 0.2 + 0.3;
 
-				// 1. 基础物理运动 / 插值运动
+				// 1. 基础运动：在 Free 状态下应用“深海暗流”的向量场
 				if (activeMode === 'free') {
-					p.x += p.vx;
-					p.y += p.vy;
+					// 引入基于正弦函数的液态扰动风场 (Flow Field)
+					const flowX = Math.sin(p.y * 0.004 + frame * 0.008) * 0.25;
+					const flowY = Math.cos(p.x * 0.004 + frame * 0.008) * 0.25;
+					
+					p.x += p.vx + flowX;
+					p.y += p.vy + flowY;
 
 					if (p.x < 0 || p.x > width) p.vx *= -1;
 					if (p.y < 0 || p.y > height) p.vy *= -1;
@@ -258,7 +333,7 @@
 						
 						if (activeMode === 'self') {
 							const ringIndex = idx % 3;
-							const angleSpeed = (ringIndex === 0 ? 0.002 : ringIndex === 1 ? -0.001 : 0.0005) * frame;
+							const angleSpeed = (ringIndex === 0 ? 0.0025 : ringIndex === 1 ? -0.0012 : 0.0006) * frame;
 							const r = Math.sqrt((tx - width/2)**2 + (ty - height/2)**2);
 							const origAngle = Math.atan2(ty - height/2, tx - width/2);
 							const currentAngle = origAngle + angleSpeed;
@@ -275,8 +350,8 @@
 						} else if (activeMode === 'shadow') {
 							const bx = width / 2;
 							const by = height / 2 + 100;
-							const angleSpeed = 0.02 * frame;
-							const r = Math.max(10, Math.sqrt((tx - bx)**2 + (ty - by)**2) - (frame % 100) * 0.2);
+							const angleSpeed = 0.022 * frame;
+							const r = Math.max(10, Math.sqrt((tx - bx)**2 + (ty - by)**2) - (frame % 100) * 0.22);
 							const origAngle = Math.atan2(ty - by, tx - bx);
 							const currentAngle = origAngle + angleSpeed;
 							const rx = bx + Math.cos(currentAngle) * r;
@@ -291,37 +366,49 @@
 					}
 				}
 
-				// 2. 鼠标吸引
+				// 2. 鼠标/自我 引力
 				if (mouse.active) {
 					const dx = mouse.x - p.x;
 					const dy = mouse.y - p.y;
 					const dist = Math.sqrt(dx * dx + dy * dy);
 					if (dist < mouse.radius) {
 						const force = (mouse.radius - dist) / mouse.radius;
-						const attractionStrength = activeMode === 'free' ? 0.35 : 0.06;
+						const attractionStrength = activeMode === 'free' ? 0.38 : 0.05;
 						p.x += (dx / dist) * force * attractionStrength * 5;
 						p.y += (dy / dist) * force * attractionStrength * 5;
 					}
 				}
 
-				// 3. 涟漪物理排斥
+				// 3. 匿名他者引力 (代表他人意识在集体潜意识中也有吸引力)
+				unseenOthers.forEach(other => {
+					const dx = other.x - p.x;
+					const dy = other.y - p.y;
+					const dist = Math.sqrt(dx * dx + dy * dy);
+					if (dist < 150) {
+						const force = (150 - dist) / 150;
+						p.x += (dx / dist) * force * 0.15;
+						p.y += (dy / dist) * force * 0.15;
+					}
+				});
+
+				// 4. 涟漪物理力与增亮
 				ripples.forEach(r => {
 					const dx = p.x - r.x;
 					const dy = p.y - r.y;
 					const dist = Math.sqrt(dx * dx + dy * dy);
 					const waveDist = Math.abs(dist - r.currentRadius);
 					
-					if (waveDist < 40) {
-						const pushForce = (40 - waveDist) / 40;
-						p.x += (dx / dist) * pushForce * 8;
-						p.y += (dy / dist) * pushForce * 8;
-						p.glow = 1.0;
+					if (waveDist < 35) {
+						const pushForce = (35 - waveDist) / 35;
+						p.x += (dx / dist) * pushForce * (r.isEcho ? 4 : 7);
+						p.y += (dy / dist) * pushForce * (r.isEcho ? 4 : 7);
+						p.glow = 1.2;
 					}
 				});
 
 				p.glow += (0.1 - p.glow) * 0.05;
 
-				// 4. 绘制粒子
+				// 5. 绘制普通粒子
 				ctx.beginPath();
 				ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 				ctx.fillStyle = p.color;
@@ -331,7 +418,8 @@
 				ctx.shadowBlur = 0; 
 			});
 
-			// 5. 绘制连接线
+			// D. 建立连线与心灵感应光桥
+			// 1. 粒子间隐秘连接
 			for (let i = 0; i < particleCount; i++) {
 				for (let j = i + 1; j < particleCount; j++) {
 					const p1 = particles[i];
@@ -340,10 +428,10 @@
 					const dy = p1.y - p2.y;
 					const dist = Math.sqrt(dx * dx + dy * dy);
 
-					const maxDist = activeMode === 'free' ? 120 : (activeMode === 'shadow' ? 80 : 150);
+					const maxDist = activeMode === 'free' ? 115 : (activeMode === 'shadow' ? 80 : 145);
 
 					if (dist < maxDist) {
-						const opacity = (1 - dist / maxDist) * 0.18 * (1 + (p1.glow + p2.glow) * 1.5);
+						const opacity = (1 - dist / maxDist) * 0.15 * (1 + (p1.glow + p2.glow) * 1.2);
 						ctx.beginPath();
 						ctx.moveTo(p1.x, p1.y);
 						ctx.lineTo(p2.x, p2.y);
@@ -358,39 +446,62 @@
 							ctx.strokeStyle = `rgba(165, 180, 252, ${opacity})`;
 						}
 						
-						ctx.lineWidth = 0.5;
+						ctx.lineWidth = 0.45;
 						ctx.stroke();
-
-						// 6. 心灵感应发光点在连线上移动
-						if (mouse.active) {
-							const mDist1 = Math.sqrt((p1.x - mouse.x)**2 + (p1.y - mouse.y)**2);
-							const mDist2 = Math.sqrt((p2.x - mouse.x)**2 + (p2.y - mouse.y)**2);
-							
-							if (mDist1 < mouse.radius && mDist2 < mouse.radius && Math.random() < 0.0015) {
-								const pulseObj = { progress: 0 };
-								animate(pulseObj, {
-									progress: 1,
-									duration: 1000 + Math.random() * 1500,
-									ease: 'linear',
-									onRender: () => {
-										const prog = pulseObj.progress;
-										const ix = p1.x + (p2.x - p1.x) * prog;
-										const iy = p1.y + (p2.y - p1.y) * prog;
-										
-										ctx.save();
-										ctx.beginPath();
-										ctx.arc(ix, iy, 2.5, 0, Math.PI * 2);
-										ctx.fillStyle = activeMode === 'free' ? '#818cf8' : p1.color;
-										ctx.shadowBlur = 8;
-										ctx.shadowColor = ctx.fillStyle as string;
-										ctx.fill();
-										ctx.restore();
-									}
-								});
-							}
-						}
 					}
 				}
+			}
+
+			// 2. 双向感应光桥 (Bilateral Telepathic Bridge)
+			// 当自我（鼠标）靠近匿名他者时，会在空中拉起一条宽大的发光光桥，产生强烈的心灵相连特效
+			if (mouse.active && activeMode === 'free') {
+				unseenOthers.forEach(other => {
+					const dx = other.x - mouse.x;
+					const dy = other.y - mouse.y;
+					const dist = Math.sqrt(dx * dx + dy * dy);
+					
+					// 在 260 像素范围内，意识开始交接
+					if (dist < 260) {
+						const bridgeAlpha = (1 - dist / 260) * 0.35;
+						
+						// 绘制渐变色光桥
+						const bridgeGrad = ctx.createLinearGradient(mouse.x, mouse.y, other.x, other.y);
+						bridgeGrad.addColorStop(0, `rgba(99, 102, 241, ${bridgeAlpha})`);
+						bridgeGrad.addColorStop(1, `${other.color}${Math.floor(bridgeAlpha * 255).toString(16).padStart(2, '0')}`);
+						
+						ctx.beginPath();
+						ctx.moveTo(mouse.x, mouse.y);
+						ctx.lineTo(other.x, other.y);
+						ctx.strokeStyle = bridgeGrad;
+						ctx.lineWidth = 1.5;
+						ctx.stroke();
+
+						// 触发持续的双向 Anime.js 发光感应点
+						if (Math.random() < 0.035) {
+							const pulseObj = { progress: 0 };
+							const direction = Math.random() > 0.5; // 双向传输
+							animate(pulseObj, {
+								progress: 1,
+								duration: 800 + Math.random() * 800,
+								ease: 'easeInOutCubic',
+								onRender: () => {
+									const prog = direction ? pulseObj.progress : (1 - pulseObj.progress);
+									const ix = mouse.x + (other.x - mouse.x) * prog;
+									const iy = mouse.y + (other.y - mouse.y) * prog;
+									
+									ctx.save();
+									ctx.beginPath();
+									ctx.arc(ix, iy, 3.5, 0, Math.PI * 2);
+									ctx.fillStyle = other.color;
+									ctx.shadowBlur = 12;
+									ctx.shadowColor = other.color;
+									ctx.fill();
+									ctx.restore();
+								}
+							});
+						}
+					}
+				});
 			}
 
 			// 绘制鼠标虚线圈
