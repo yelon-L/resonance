@@ -39,9 +39,9 @@
 	<meta name="author" content="李跃龙" />
 
 	<!-- 搜索引擎所有权验证占位符 (Webmaster Verification Tags) -->
-	<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+	<meta name="google-site-verification" content="_mPOjUOtUfbNc0M4usV_a2QagvJ9wADNacFjxYt2YHE" />
 	<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
-	<meta name="baidu-site-verification" content="YOUR_BAIDU_VERIFICATION_CODE" />
+	<meta name="baidu-site-verification" content="codeva-UwKdcakZhR" />
 
 	<!-- Open Graph / 社交与大模型语义提取 -->
 	<meta property="og:type" content="website" />
