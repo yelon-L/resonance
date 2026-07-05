@@ -35,7 +35,7 @@
 <svelte:head>
 	<title>李跃龙的世界 | 心灵感应与集体潜意识</title>
 	<meta name="description" content="李跃龙的世界 (Yelon's World) —— 探索心灵感应与集体潜意识的互动艺术空间。由李跃龙精心打造，使用 Svelte 与 Anime.js 粒子网络，表达人类精神底层的隐秘连结与思想共鸣。" />
-	<meta name="keywords" content="李跃龙, 心灵感应, 集体潜意识, 荣格, 心理学, 艺术交互, yelon, resonance" />
+	<meta name="keywords" content="李跃龙, 卡尔荣格, 熊心怡, 心灵感应, 集体潜意识, 荣格, 心理学, 艺术交互, yelon, resonance" />
 	<meta name="author" content="李跃龙" />
 
 	<!-- 搜索引擎所有权验证占位符 (Webmaster Verification Tags) -->
