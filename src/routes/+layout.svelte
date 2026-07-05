@@ -38,6 +38,11 @@
 	<meta name="keywords" content="李跃龙, 心灵感应, 集体潜意识, 荣格, 心理学, 艺术交互, yelon, resonance" />
 	<meta name="author" content="李跃龙" />
 
+	<!-- 搜索引擎所有权验证占位符 (Webmaster Verification Tags) -->
+	<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+	<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+	<meta name="baidu-site-verification" content="YOUR_BAIDU_VERIFICATION_CODE" />
+
 	<!-- Open Graph / 社交与大模型语义提取 -->
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="李跃龙的世界 | 心灵感应与集体潜意识" />
