@@ -5,13 +5,13 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build && (if [ -n \"$BAIDU_PUSH_TOKEN\" ]; then npm run baidu-push; else echo 'Baidu push skipped: BAIDU_PUSH_TOKEN not defined'; fi)",
 		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js --port 4173",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"gen": "wrangler types",
-		"baidu-push": "curl -H 'Content-Type: text/plain' --data-binary @static/urls.txt 'http://data.zz.baidu.com/urls?site=https://resonance.301098.xyz&token=YOUR_TOKEN'"
+		"baidu-push": "curl -H 'Content-Type: text/plain' --data-binary @static/urls.txt \"http://data.zz.baidu.com/urls?site=https://resonance.301098.xyz&token=$BAIDU_PUSH_TOKEN\""
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
