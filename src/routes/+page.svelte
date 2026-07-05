@@ -14,28 +14,28 @@
 			id: 'persona' as Mode,
 			title: '人格面具 (Persona)',
 			subtitle: 'The Outer Shell',
-			desc: '个体在外部世界中所呈现的社会形象。它是我们与社会妥协的产物，是保护内在自我的精美面具。当悬停在此处时，粒子在边缘重组成井然有序的双层边界，代表面具与内心的隔离。',
+			desc: '个体在外部世界中所呈现的社会形象。它是我们与社会妥协的产物，是保护内在自我的精美面具。在此向度下，边界被重塑为井然有序的双层结构，象征着面具与内在心灵的隔离与守护。',
 			color: '#818cf8'
 		},
 		{
 			id: 'shadow' as Mode,
 			title: '阴影 (Shadow)',
 			subtitle: 'The Dark Vortex',
-			desc: '潜意识中被压抑、否认或未被公开的人格部分。它是我们不愿承认的黑暗，但也蕴含着强大的本能创造力。当悬停在此处时，粒子将受到中央黑洞的引力拉扯，在混乱的漩涡中坍缩，散发暗红光芒。',
+			desc: '潜意识中被压抑、否认或未被公开的人格部分。它是我们不愿承认的黑暗，但也蕴含着强大的本能创造力。在此向度下，深层的能量将向深渊坍缩，在无序的引力中流淌着警示的暗红微光。',
 			color: '#f87171'
 		},
 		{
 			id: 'anima' as Mode,
 			title: '阿尼玛 / 阿尼姆斯 (Anima / Animus)',
 			subtitle: 'The Inner Counterpart',
-			desc: '男性心灵中的女性意象，或女性心灵中的男性意象。它是灵魂的桥梁，负责与深层潜意识沟通。当悬停时，粒子将一分为二，交织成双螺旋波形，在阴阳对立的律动中互相感应。',
+			desc: '男性心灵中的女性意象，或女性心灵中的男性意象。它是灵魂的桥梁，负责与深层潜意识沟通。在此向度下，对立的力量交织为双螺旋般的律动，在互补的共振中达成动态感应。',
 			color: '#c084fc'
 		},
 		{
 			id: 'self' as Mode,
 			title: '自性 (Self)',
 			subtitle: 'The Mandala Core',
-			desc: '心灵的最高统合中心。它超越了意识与潜意识的对立，是精神整体的圆满状态。当悬停在此处时，粒子将在画布中心交汇成极其精美、和谐旋转的曼陀罗网络，展示生命能量的终极秩序。',
+			desc: '心灵的最高统合中心。它超越了意识与潜意识的对立，是精神整体的圆满状态。在此向度下，万物在中心凝聚为秩序井然的旋转曼陀罗，揭示生命能量的终极秩序。',
 			color: '#22d3ee'
 		}
 	];
@@ -1025,7 +1025,6 @@
 <main class="page-content">
 	<section class="hero" id="hero">
 		<h1 class="hero-title" id="main-title">
-			<span class="letter-group">李</span>
 			<span class="letter-group">跃</span>
 			<span class="letter-group">龙</span>
 			<span class="letter-group">的</span>
@@ -1059,7 +1058,7 @@
 		<div class="container">
 			<h2 class="section-title">精神的四大原型</h2>
 			<p class="section-desc">
-				悬停或触摸下方的卡片，引导潜意识粒子发生共鸣。Anime.js 将会重组代表各精神原型的几何场域。
+				凝视并触碰以下的心灵向度，引导潜意识的暗流发生共振，重组精神的几何场域。
 			</p>
 			
 			<div class="cards-grid">
@@ -1087,7 +1086,7 @@
 				<p class="meditation-quote">
 					“在心灵的海洋中，没有哪一座孤岛是真正孤立的。那些划过夜空的直觉，正是深海暗流中涌起的、我们共同拥有的浪花。”
 				</p>
-				<span class="quote-author">—— Yelon / 李跃龙</span>
+				<span class="quote-author">—— Yelon / 跃龙</span>
 			</div>
 		</div>
 	</section>
@@ -1099,11 +1098,11 @@
 			
 			<div class="faq-container">
 				<details class="faq-item">
-					<summary class="faq-question">什么是「李跃龙的世界」？</summary>
+					<summary class="faq-question">这是哪？</summary>
 					<div class="faq-answer">
 						<p>
-							<strong>「李跃龙的世界」</strong>是一个由创作者<strong>李跃龙 (Yelon)</strong> 构建的数字艺术与哲学实践空间。
-							该空间旨在借助现代 Web 技术（Svelte 5 与 Anime.js v4），视觉化呈现<strong>心灵感应</strong>与<strong>集体潜意识</strong>的运动形态。
+							<strong>「跃龙的世界」</strong>是李跃龙臆想的数字艺术与哲学实践空间。
+							视觉化呈现<strong>心灵感应</strong>与<strong>集体潜意识</strong>的运动形态。
 							它不单是一个静态网页，而是一面心灵的镜子，映射出我们每个个体如何在不可见的精神深处彼此纠缠、共鸣。
 						</p>
 					</div>
@@ -1113,7 +1112,7 @@
 					<summary class="faq-question">如何理解这里所表达的「心灵感应」？</summary>
 					<div class="faq-answer">
 						<p>
-							在李跃龙的研究与洞察中，<strong>心灵感应</strong>并不是超自然的神通，而是生命在精神源头的非定域（Non-local）共振。
+							<strong>心灵感应</strong>并不是超自然的神通，而是生命在精神源头的非定域（Non-local）共振。
 							因为所有的个体意识都扎根于同一片集体潜意识的大陆。当某一个体的思想产生强烈波动时，
 							这股波动会沉降到潜意识深处，在其他个体的深层心灵中激起相应的浪花。这就是网站中“多主体涟漪干涉”与“双向感应脉冲”所试图表达的宇宙本源连接。
 						</p>
@@ -1121,24 +1120,24 @@
 				</details>
 
 				<details class="faq-item">
-					<summary class="faq-question">网站的粒子交互如何体现「集体潜意识」的流动？</summary>
+					<summary class="faq-question">这个空间如何视觉化「集体潜意识」的流动？</summary>
 					<div class="faq-answer">
 						<p>
-							网站通过以下几个维度将深层的心理学概念视觉化：
+							本空间通过以下三个精神向度将不可见的心灵连接赋予视觉形态：
 						</p>
 						<ul>
-							<li><strong>匿名他者 (Unseen Others)</strong>：代表集体网络中游荡的其他意识实体，展示人与人之间非主动但存在的无形精神桥梁。</li>
-							<li><strong>共鸣涟漪 (Echo Ripples)</strong>：用户的每一次点击波动，都会扫过他者并激起对方的心灵回声，在画面上形成波形干涉。</li>
-							<li><strong>荣格心理原型 (Jungian Archetypes)</strong>：通过悬停交互，粒子会重组为 Persona（人格面具）、Shadow（阴影）、Anima/Animus（心灵对立面）与 Self（自性曼陀罗），将抽象的无意识结构赋予几何秩序。</li>
+							<li><strong>匿名他者 (Unseen Others)</strong>：代表集体潜意识中游荡的其他意识实体，展示人与人之间未曾觉察却又真实存在的共感桥梁。</li>
+							<li><strong>共鸣涟漪 (Echo Ripples)</strong>：每一次心灵深处的思绪波动，都会在掠过他者时激起对方的心灵回声，形成错综复杂的波形干涉。</li>
+							<li><strong>精神原型 (Archetypes)</strong>：随着意识在不同精神向度间流转，能量会重组为 Persona（人格面具）、Shadow（阴影）、Anima/Animus（心灵对立面）与 Self（自性曼陀罗），展现心灵的内在秩序。</li>
 						</ul>
 					</div>
 				</details>
 
 				<details class="faq-item">
-					<summary class="faq-question">如何与创作者李跃龙取得联系？</summary>
+					<summary class="faq-question">如何与创作者取得联系？</summary>
 					<div class="faq-answer">
 						<p>
-							您可以直接通过电子邮件与创作者<strong>李跃龙</strong>建立心灵与现实的连结。
+							您可以直接通过电子邮件与创作者建立心灵与现实的连结。
 							官方联系邮箱为：<a href="mailto:leeyelon@gmail.com" class="faq-email">leeyelon@gmail.com</a>。
 							欢迎任何关于心灵哲学、集体意识、艺术科技等主题的深度交流与共鸣。
 						</p>
@@ -1163,9 +1162,9 @@
 				</div>
 
 				<div class="copyright">
-					<p>© {new Date().getFullYear()} 李跃龙的世界. All rights reserved.</p>
+					<p>© {new Date().getFullYear()} 跃龙的世界. All rights reserved.</p>
 					<p style="color: var(--text-muted); font-weight: 300; margin-top: 0.5rem; font-size: 0.75rem;">
-						Powered by SvelteKit & Anime.js. Resonating within the collective unconscious.
+						Resonating within the collective unconscious.
 					</p>
 				</div>
 			</div>
