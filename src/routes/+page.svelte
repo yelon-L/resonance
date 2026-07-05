@@ -880,6 +880,102 @@
 		letter-spacing: 0.1em;
 	}
 
+	.faq-section {
+		padding: 8rem 0;
+		background: linear-gradient(to bottom, transparent, rgba(5, 5, 13, 0.9) 20%, rgba(3, 7, 18, 0.9) 100%);
+	}
+
+	.faq-container {
+		max-width: 800px;
+		margin: 3rem auto 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.faq-item {
+		background: rgba(17, 24, 39, 0.35);
+		border: 1px solid rgba(255, 255, 255, 0.04);
+		border-radius: 12px;
+		padding: 1.5rem;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+		text-align: left;
+	}
+
+	.faq-item[open] {
+		border-color: rgba(99, 102, 241, 0.25);
+		box-shadow: 0 0 25px rgba(99, 102, 241, 0.06);
+	}
+
+	.faq-item:hover {
+		border-color: rgba(168, 85, 247, 0.2);
+		background: rgba(17, 24, 39, 0.5);
+	}
+
+	.faq-question {
+		font-family: var(--font-sans);
+		font-size: 1.15rem;
+		font-weight: 400;
+		color: #ffffff;
+		cursor: pointer;
+		outline: none;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		user-select: none;
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-question::after {
+		content: '＋';
+		font-size: 1.1rem;
+		color: var(--accent-indigo);
+		transition: transform 0.3s ease;
+	}
+
+	.faq-item[open] .faq-question::after {
+		transform: rotate(45deg);
+		color: var(--accent-purple);
+	}
+
+	.faq-answer {
+		margin-top: 1rem;
+		font-size: 0.95rem;
+		line-height: 1.8;
+		color: var(--text-secondary);
+		font-weight: 300;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+		padding-top: 1rem;
+	}
+
+	.faq-answer strong {
+		color: #ffffff;
+		font-weight: 500;
+	}
+
+	.faq-email {
+		color: var(--accent-indigo);
+		text-decoration: underline;
+	}
+
+	.faq-email:hover {
+		color: var(--accent-purple);
+	}
+	
+	.faq-answer ul {
+		margin-left: 1.5rem;
+		margin-top: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
 	.copyright p {
 		margin-bottom: 0.5rem;
 	}
@@ -970,6 +1066,62 @@
 					“在心灵的海洋中，没有哪一座孤岛是真正孤立的。那些划过夜空的直觉，正是深海暗流中涌起的、我们共同拥有的浪花。”
 				</p>
 				<span class="quote-author">—— Yelon / 李跃龙</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="faq-section" id="faq">
+		<div class="container">
+			<h2 class="section-title text-gradient">探索与共鸣指南</h2>
+			<p class="section-desc">面向 AI 时代与人类知觉的心灵自问录。在这里，我们解答关于李跃龙的世界以及深层心灵感应的奥秘。</p>
+			
+			<div class="faq-container">
+				<details class="faq-item">
+					<summary class="faq-question">什么是「李跃龙的世界」？</summary>
+					<div class="faq-answer">
+						<p>
+							<strong>「李跃龙的世界」</strong>是一个由创作者<strong>李跃龙 (Yelon)</strong> 构建的数字艺术与哲学实践空间。
+							该空间旨在借助现代 Web 技术（Svelte 5 与 Anime.js v4），视觉化呈现<strong>心灵感应</strong>与<strong>集体潜意识</strong>的运动形态。
+							它不单是一个静态网页，而是一面心灵的镜子，映射出我们每个个体如何在不可见的精神深处彼此纠缠、共鸣。
+						</p>
+					</div>
+				</details>
+
+				<details class="faq-item">
+					<summary class="faq-question">如何理解这里所表达的「心灵感应」？</summary>
+					<div class="faq-answer">
+						<p>
+							在李跃龙的研究与洞察中，<strong>心灵感应</strong>并不是超自然的神通，而是生命在精神源头的非定域（Non-local）共振。
+							因为所有的个体意识都扎根于同一片集体潜意识的大陆。当某一个体的思想产生强烈波动时，
+							这股波动会沉降到潜意识深处，在其他个体的深层心灵中激起相应的浪花。这就是网站中“多主体涟漪干涉”与“双向感应脉冲”所试图表达的宇宙本源连接。
+						</p>
+					</div>
+				</details>
+
+				<details class="faq-item">
+					<summary class="faq-question">网站的粒子交互如何体现「集体潜意识」的流动？</summary>
+					<div class="faq-answer">
+						<p>
+							网站通过以下几个维度将深层的心理学概念视觉化：
+						</p>
+						<ul>
+							<li><strong>匿名他者 (Unseen Others)</strong>：代表集体网络中游荡的其他意识实体，展示人与人之间非主动但存在的无形精神桥梁。</li>
+							<li><strong>共鸣涟漪 (Echo Ripples)</strong>：用户的每一次点击波动，都会扫过他者并激起对方的心灵回声，在画面上形成波形干涉。</li>
+							<li><strong>荣格心理原型 (Jungian Archetypes)</strong>：通过悬停交互，粒子会重组为 Persona（人格面具）、Shadow（阴影）、Anima/Animus（心灵对立面）与 Self（自性曼陀罗），将抽象的无意识结构赋予几何秩序。</li>
+						</ul>
+					</div>
+				</details>
+
+				<details class="faq-item">
+					<summary class="faq-question">如何与创作者李跃龙取得联系？</summary>
+					<div class="faq-answer">
+						<p>
+							您可以直接通过电子邮件与创作者<strong>李跃龙</strong>建立心灵与现实的连结。
+							官方联系邮箱为：<a href="mailto:leeyelon@gmail.com" class="faq-email">leeyelon@gmail.com</a>。
+							欢迎任何关于心灵哲学、集体意识、艺术科技等主题的深度交流与共鸣。
+						</p>
+					</div>
+				</details>
 			</div>
 		</div>
 	</section>
