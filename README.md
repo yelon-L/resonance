@@ -4,6 +4,9 @@ An interactive, fluid-art consciousness space built with **Svelte 5** and **Anim
 
 基于 **Svelte 5** 与 **Anime.js v4** 构建的交互式精神暗流空间，旨在通过流体粒子艺术，视觉化探索荣格的集体潜意识与心灵感应主题。
 
+* **Live Site / 线上自定义域名**: [https://resonance.301098.xyz](https://resonance.301098.xyz)
+* **Cloudflare Preview / 临时预览**: [https://myw.leeyelon.workers.dev](https://myw.leeyelon.workers.dev)
+
 ---
 
 ## 🌌 Repository Descriptions / 仓库描述
