@@ -1,3 +1,8 @@
+---
+name: animejs-v4-svelte
+description: Guide for integrating Anime.js v4 and Svelte 5 within Cloudflare Workers Assets templates. Use when building interactive animations, scroll-linked canvas nodes, or scaffolding new SvelteKit projects on Cloudflare.
+---
+
 # Anime.js v4 & Svelte 5 Integration Guide
 
 ## Svelte 5 & Cloudflare Non-interactive Project Creation
