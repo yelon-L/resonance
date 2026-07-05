@@ -819,12 +819,7 @@
 		font-weight: 300;
 	}
 
-	.quote-author {
-		font-size: 0.9rem;
-		letter-spacing: 0.3em;
-		color: var(--text-muted);
-		text-transform: uppercase;
-	}
+
 
 	footer {
 		padding: 8rem 0 4rem;
@@ -1086,7 +1081,6 @@
 				<p class="meditation-quote">
 					“在心灵的海洋中，没有哪一座孤岛是真正孤立的。那些划过夜空的直觉，正是深海暗流中涌起的、我们共同拥有的浪花。”
 				</p>
-				<span class="quote-author">—— Yelon / 跃龙</span>
 			</div>
 		</div>
 	</section>
@@ -1094,7 +1088,7 @@
 	<section class="faq-section" id="faq">
 		<div class="container">
 			<h2 class="section-title text-gradient">探索与共鸣指南</h2>
-			<p class="section-desc">面向 AI 时代与人类知觉的心灵自问录。在这里，我们解答关于李跃龙的世界以及深层心灵感应的奥秘。</p>
+			<p class="section-desc">面向 AI 时代与人类知觉的心灵自问录。</p>
 			
 			<div class="faq-container">
 				<details class="faq-item">
@@ -1137,9 +1131,9 @@
 					<summary class="faq-question">如何与创作者取得联系？</summary>
 					<div class="faq-answer">
 						<p>
-							您可以直接通过电子邮件与创作者建立心灵与现实的连结。
-							官方联系邮箱为：<a href="mailto:leeyelon@gmail.com" class="faq-email">leeyelon@gmail.com</a>。
-							欢迎任何关于心灵哲学、集体意识、艺术科技等主题的深度交流与共鸣。
+							您可以直接通过电子邮件与跃龙建立心灵与现实的连结。
+							如果您有任何关于<strong>心灵感应、集体潜意识、梦境共鸣或共时性事件</strong>的经历或故事想与李跃龙分享，欢迎随时写信至：
+							<a href="mailto:leeyelon@gmail.com?subject=%E5%88%86%E4%BA%AB%E6%88%91%E5%85%B3%E4%BA%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%2F%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9A%84%E6%95%85%E4%BA%8B&body=%E8%B7%83%E9%BE%99%EF%BC%8C%E4%BD%A0%E5%A5%BD%EF%BC%9A%0A%0A%E5%9C%A8%E6%AD%A4%E6%83%B3%E4%B8%8E%E4%BD%A0%E5%88%86%E4%BA%AB%E4%B8%80%E6%AE%B5%E6%88%91%E4%BA%B2%E5%8E%86%E7%9A%84%E3%80%81%E4%B8%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%E6%88%96%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9B%B8%E5%85%B3%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9A%0A%0A" class="faq-email">leeyelon@gmail.com</a>。
 						</p>
 					</div>
 				</details>
@@ -1150,10 +1144,14 @@
 	<footer>
 		<div class="container">
 			<div class="footer-content">
-				<h3 class="footer-title">与我感应</h3>
+				<h3 class="footer-title">与李跃龙感应</h3>
+				<p style="color: var(--text-secondary); font-size: 0.95rem; font-weight: 300; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+					您是否有与心灵感应、集体潜意识有关的奇特经历或故事？<br/>
+					欢迎点击下方写信与跃龙分享，在精神的深海中激起共鸣的涟漪。
+				</p>
 				
 				<div class="email-container">
-					<a href="mailto:leeyelon@gmail.com" class="email-link" id="email-contact">
+					<a href="mailto:leeyelon@gmail.com?subject=%E5%88%86%E4%BA%AB%E6%88%91%E5%85%B3%E4%BA%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%2F%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9A%84%E6%95%85%E4%BA%8B&body=%E8%B7%83%E9%BE%99%EF%BC%8C%E4%BD%A0%E5%A5%BD%EF%BC%9A%0A%0A%E5%9C%A8%E6%AD%A4%E6%83%B3%E4%B8%8E%E4%BD%A0%E5%88%86%E4%BA%AB%E4%B8%80%E6%AE%B5%E6%88%91%E4%BA%B2%E5%8E%86%E7%9A%84%E3%80%81%E4%B8%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%E6%88%96%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9B%B8%E5%85%B3%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9A%0A%0A" class="email-link" id="email-contact">
 						<svg class="email-icon" viewBox="0 0 24 24">
 							<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
 						</svg>
@@ -1162,7 +1160,7 @@
 				</div>
 
 				<div class="copyright">
-					<p>© {new Date().getFullYear()} 跃龙的世界. All rights reserved.</p>
+					<p>© {new Date().getFullYear()} 李跃龙的灵·感旅程. All rights reserved.</p>
 					<p style="color: var(--text-muted); font-weight: 300; margin-top: 0.5rem; font-size: 0.75rem;">
 						Resonating within the collective unconscious.
 					</p>
