@@ -1079,7 +1079,13 @@
 		<div class="container">
 			<div class="quote-container">
 				<p class="meditation-quote">
-					“在心灵的海洋中，没有哪一座孤岛是真正孤立的。那些划过夜空的直觉，正是深海暗流中涌起的、我们共同拥有的浪花。”
+					在心灵的海洋中 没有哪一座孤岛是真正孤立的
+				</p>
+				<p class="meditation-quote">
+					那些划过夜空的直觉
+				</p>
+				<p class="meditation-quote">
+					正是深海暗流中涌起的、我们共同拥有的浪花
 				</p>
 			</div>
 		</div>
