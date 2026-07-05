@@ -673,11 +673,7 @@
 		color: #d1d5db;
 	}
 
-	.highlight {
-		font-weight: 500;
-		color: var(--accent-indigo);
-		text-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
-	}
+
 
 	.archetypes-section {
 		padding: 8rem 0;
@@ -930,14 +926,12 @@
 			<h2 class="section-title text-gradient">心灵的无形连结</h2>
 			<div class="intro-text">
 				<p>
-					在现实世界的表象之下，存在着一个不可见却又无可否认的纽带。
-					我们以为自己是独立的孤岛，但实际上，我们每个人都扎根于同一片庞大的精神大陆。
-					这就是心理学家荣格所定义的<span class="highlight">「集体潜意识」</span>。
+					「我们看似是孤立浮悬的岛屿，却在深海之底，共享着同一片无垠且古老的心灵根基。
+					意识是我们筑起的微小堤坝，而集体潜意识，则是那冲破一切疆界的永恒暗流。」
 				</p>
-				<p style="margin-top: 1.5rem;">
-					在这里，时间与空间不再成为藩篱，思想与情感跨越深渊静默交融。
-					<span class="highlight">「心灵感应」</span>并非神秘的玄学，而是潜意识之海中一阵泛起共鸣的微风。
-					在这里，你可以与自己深处的投影对话，体验意识碎片的重组与共振。
+				<p style="margin-top: 2rem; font-size: 1.1rem; line-height: 2.2; color: #a5b4fc; font-style: italic;">
+					「在这里，语言是不必要的修饰。当彼处的思绪沉降至深渊的寂静，此处的浪花便泛起共鸣。
+					心灵感应并非神秘的妄想，而是生命在精神的最初源头，本就未曾分离的证言。」
 				</p>
 			</div>
 		</div>
