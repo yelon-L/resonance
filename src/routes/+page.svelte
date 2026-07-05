@@ -51,7 +51,8 @@
 		let width = (canvas.width = window.innerWidth);
 		let height = (canvas.height = window.innerHeight);
 
-		const particleCount = 120;
+		const isMobile = width < 768;
+		const particleCount = isMobile ? 60 : 120;
 		const particles: any[] = [];
 		const ripples: any[] = [];
 		const mouse = { x: 0, y: 0, active: false, radius: 220 };
@@ -198,6 +199,21 @@
 			mouse.active = false;
 		});
 
+		// 手机触屏移动 (移动端心灵感应支持)
+		function handleTouch(e: TouchEvent) {
+			if (e.touches.length > 0) {
+				mouse.x = e.touches[0].clientX;
+				mouse.y = e.touches[0].clientY;
+				mouse.active = true;
+			}
+		}
+
+		window.addEventListener('touchstart', handleTouch, { passive: true });
+		window.addEventListener('touchmove', handleTouch, { passive: true });
+		window.addEventListener('touchend', () => {
+			mouse.active = false;
+		}, { passive: true });
+
 		// 鼠标点击 - 产生主涟漪
 		window.addEventListener('click', (e) => {
 			const target = e.target as HTMLElement;
@@ -252,8 +268,10 @@
 				ctx.beginPath();
 				ctx.arc(other.x, other.y, other.radius, 0, Math.PI * 2);
 				ctx.fillStyle = other.color;
-				ctx.shadowBlur = 15;
-				ctx.shadowColor = other.color;
+				if (!isMobile) {
+					ctx.shadowBlur = 15;
+					ctx.shadowColor = other.color;
+				}
 				ctx.fill();
 				ctx.shadowBlur = 0;
 
@@ -412,8 +430,10 @@
 				ctx.beginPath();
 				ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
 				ctx.fillStyle = p.color;
-				ctx.shadowBlur = (p.glow * 10) + (localGlow * 4);
-				ctx.shadowColor = p.color;
+				if (!isMobile) {
+					ctx.shadowBlur = (p.glow * 10) + (localGlow * 4);
+					ctx.shadowColor = p.color;
+				}
 				ctx.fill();
 				ctx.shadowBlur = 0; 
 			});
@@ -493,8 +513,10 @@
 									ctx.beginPath();
 									ctx.arc(ix, iy, 3.5, 0, Math.PI * 2);
 									ctx.fillStyle = other.color;
-									ctx.shadowBlur = 12;
-									ctx.shadowColor = other.color;
+									if (!isMobile) {
+										ctx.shadowBlur = 12;
+										ctx.shadowColor = other.color;
+									}
 									ctx.fill();
 									ctx.restore();
 								}
