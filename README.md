@@ -87,3 +87,26 @@ npx wrangler types
 # Deploy to Cloudflare
 npx wrangler deploy
 ```
+
+---
+
+## 🔍 Search Engine Indexing (Baidu Optimization) / 百度收录与 API 推送
+
+Since Baidu often restricts XML sitemaps for new accounts, you can use the following methods for indexing:
+由于百度通常对新站限制 XML 站点地图的提交，您可以使用以下方式完成收录：
+
+### 1. Plain Text URL List / TXT 站点列表提交
+Submit the plain-text list `/urls.txt` (which has been generated in `static/urls.txt`) in your Baidu Webmaster Console instead of the XML format.
+在百度站长后台的“普通收录 -> 提交”中，直接选择并提交 TXT 格式的站点文件 `/urls.txt`（项目已在 `static/urls.txt` 预置此文件）。
+
+### 2. Direct API Submission / API 主动推送
+Submit your page URLs directly to Baidu's indexing servers via command line:
+您可以在本地通过运行命令直接向百度服务器秒级提交您的网址：
+
+1. Copy your submission token from Baidu Webmaster Console (普通收录 -> API提交).
+2. Run the command by replacing `YOUR_TOKEN` with your actual token:
+```bash
+# Replace YOUR_TOKEN and execute in terminal:
+curl -H 'Content-Type: text/plain' --data-binary @static/urls.txt 'http://data.zz.baidu.com/urls?site=https://resonance.301098.xyz&token=YOUR_TOKEN'
+```
+*(Or modify the `"baidu-push"` script in `package.json` with your token and run `npm run baidu-push`).*
