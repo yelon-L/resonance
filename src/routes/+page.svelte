@@ -565,6 +565,11 @@
 			opacity: [0, 1],
 			duration: 800
 		}, '-=600')
+		.add('.hero-actions', {
+			translateY: [20, 0],
+			opacity: [0, 1],
+			duration: 800
+		}, '-=600')
 		.add('.scroll-hint', {
 			translateY: [10, 0],
 			opacity: [0, 0.7],
@@ -647,6 +652,69 @@
 		margin-bottom: 4rem;
 		text-transform: uppercase;
 		padding-left: 0.4em;
+	}
+
+	.hero-actions {
+		opacity: 0;
+		transform: translateY(20px);
+		margin-bottom: 2.5rem;
+		display: flex;
+		justify-content: center;
+		z-index: 20;
+	}
+
+	.journey-btn {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.9rem 2.4rem;
+		font-family: var(--font-sans);
+		font-size: 0.95rem;
+		font-weight: 400;
+		color: #ffffff;
+		background: rgba(17, 24, 39, 0.45);
+		border: 1px solid rgba(129, 140, 248, 0.25);
+		border-radius: 40px;
+		text-decoration: none;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+		letter-spacing: 0.15em;
+	}
+
+	.journey-btn:hover {
+		border-color: rgba(168, 85, 247, 0.5);
+		box-shadow: 0 0 25px rgba(129, 140, 248, 0.25);
+		transform: translateY(-2px);
+	}
+
+	.pulse-ring {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border: 1px solid var(--accent-indigo);
+		border-radius: 40px;
+		opacity: 0;
+		animation: pulse-ring-anim 2.5s infinite;
+		pointer-events: none;
+	}
+
+	@keyframes pulse-ring-anim {
+		0% {
+			transform: scale(0.95);
+			opacity: 0.8;
+		}
+		50% {
+			opacity: 0.3;
+		}
+		100% {
+			transform: scale(1.15);
+			opacity: 0;
+		}
 	}
 
 	.scroll-hint {
@@ -1027,6 +1095,12 @@
 			<span class="letter-group">界</span>
 		</h1>
 		<p class="hero-subtitle">Yelon's World</p>
+		<div class="hero-actions">
+			<a href="/journey" class="journey-btn">
+				<span class="pulse-ring"></span>
+				启航：探索潜意识维度
+			</a>
+		</div>
 		<button class="scroll-hint" onclick={() => document.getElementById('intro')?.scrollIntoView()} type="button">
 			向下探索潜意识深处 <br>
 			<span>↓</span>
