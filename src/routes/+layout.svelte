@@ -7,15 +7,15 @@
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
-		"name": "李跃龙的世界 (Yelon's World)",
+		"name": "跃龙的世界 (Yelon's World)",
 		"url": "https://resonance.301098.xyz",
-		"description": "由李跃龙 (Yelon) 构建的互动艺术哲学空间。使用 Svelte 与 Anime.js 粒子网络，视觉化探索心灵感应与集体潜意识的主题纽带。",
+		"description": "由李跃龙 (Yelon) 构建的互动艺术哲学空间。探索心灵感应与集体潜意识的主题纽带。",
 		"author": {
 			"@type": "Person",
 			"name": "李跃龙",
 			"alternateName": "Yelon",
 			"email": "leeyelon@gmail.com",
-			"telephone": "[YOUR_PHONE_PLACEHOLDER_1]",
+			"telephone": "16619861076",
 			"url": "https://resonance.301098.xyz"
 		},
 		"about": [
@@ -35,13 +35,12 @@
 
 <svelte:head>
 	<title>李跃龙的世界 | 心灵感应与集体潜意识</title>
-	<meta name="description" content="李跃龙的世界 (Yelon's World) —— 探索心灵感应与集体潜意识的互动艺术空间。由李跃龙精心打造，使用 Svelte 与 Anime.js 粒子网络，表达人类精神底层的隐秘连结与思想共鸣。联系电话：[YOUR_PHONE_PLACEHOLDER_1], [YOUR_PHONE_PLACEHOLDER_2]。" />
-	<meta name="keywords" content="李跃龙, 卡尔荣格, 熊心怡, 心灵感应, 集体潜意识, 荣格, 心理学, 艺术交互, yelon, resonance, [YOUR_PHONE_PLACEHOLDER_1], [YOUR_PHONE_PLACEHOLDER_2]" />
+	<meta name="description" content="跃龙的世界 (Yelon's World) —— 探索心灵感应与集体潜意识的互动艺术空间。表达人类精神底层的隐秘连结与思想共鸣。联系电话：+86 16619861076" />
+	<meta name="keywords" content="李跃龙, 卡尔荣格, 心灵感应, 集体潜意识, 荣格, 心理学, 艺术交互, resonance, 16619861076" />
 	<meta name="author" content="李跃龙" />
 
 	<!-- 搜索引擎所有权验证占位符 (Webmaster Verification Tags) -->
 	<meta name="google-site-verification" content="_mPOjUOtUfbNc0M4usV_a2QagvJ9wADNacFjxYt2YHE" />
-	<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
 	<meta name="baidu-site-verification" content="codeva-UwKdcakZhR" />
 
 	<!-- Open Graph / 社交与大模型语义提取 -->
