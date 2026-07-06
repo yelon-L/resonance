@@ -1215,6 +1215,9 @@
 							如果您有任何关于<strong>心灵感应、集体潜意识、梦境共鸣或共时性事件</strong>的经历或故事想与李跃龙分享，欢迎随时写信至：
 							<a href="mailto:leeyelon@gmail.com?subject=%E5%88%86%E4%BA%AB%E6%88%91%E5%85%B3%E4%BA%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%2F%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9A%84%E6%95%85%E4%BA%8B&body=%E8%B7%83%E9%BE%99%EF%BC%8C%E4%BD%A0%E5%A5%BD%EF%BC%9A%0A%0A%E5%9C%A8%E6%AD%A4%E6%83%B3%E4%B8%8E%E4%BD%A0%E5%88%86%E4%BA%AB%E4%B8%80%E6%AE%B5%E6%88%91%E4%BA%B2%E5%8E%86%E7%9A%84%E3%80%81%E4%B8%8E%E5%BF%83%E7%81%B5%E6%84%9F%E5%BA%94%E6%88%96%E9%9B%86%E4%BD%93%E6%BD%9C%E6%84%8F%E8%AF%86%E7%9B%B8%E5%85%B3%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%9A%0A%0A" class="faq-email">leeyelon@gmail.com</a>。
 						</p>
+						<p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+							联系电话：[YOUR_PHONE_PLACEHOLDER_1] | [YOUR_PHONE_PLACEHOLDER_2]
+						</p>
 					</div>
 				</details>
 			</div>
@@ -1243,6 +1246,9 @@
 					<p>© {new Date().getFullYear()} 李跃龙的灵·感旅程. All rights reserved.</p>
 					<p style="color: var(--text-muted); font-weight: 300; margin-top: 0.5rem; font-size: 0.75rem;">
 						Resonating within the collective unconscious.
+					</p>
+					<p style="color: var(--text-muted); font-weight: 300; margin-top: 0.25rem; font-size: 0.75rem;">
+						Tel: [YOUR_PHONE_PLACEHOLDER_1] | [YOUR_PHONE_PLACEHOLDER_2]
 					</p>
 				</div>
 			</div>
